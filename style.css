@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+    overflow: hidden;
+}
+
+nav, .nav_links_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+nav{
+    background-color: #edeef0;
+    min-height: 8vh;
+    padding: 0 50px;
+   
+}
+
+.nav_links_container{
+    list-style: none;
+    width: 40%;
+}
+
+.nav_links_container li a  {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;   
+    
+}
+
+#logo{
+    color: orangered;
+    font-size: 2.2em;  
+}
+
+.burger div{
+    background-color: black;
+    height: 3px;
+    width: 25px;   
+    margin: 5px;
+    transition: all 0.5s ease;
+}
+
+.burger{
+    display: none;
+}
+
+@media screen and (max-width:768px){
+
+.burger{
+        display: block;        
+}
+
+.nav_links_container{
+    position: absolute;
+    right: 0;
+    top: 8vh;
+    height: 92vh;
+    background-color: #edeef0 ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    transform: translateX(100%);
+}
+
+.nav_links_container li {
+    opacity: 0%;
+}
+.nav_clicked{
+    transform: translateX(0%);
+}
+
+}
+
+.burger_clicked #line1{
+    transform: rotate(45deg) translate(5px);
+}
+
+.burger_clicked #line2{
+    display: none;
+}
+
+.burger_clicked #line3{
+    transform: rotate(-45deg) translate(5px);
+}
+
+@keyframes navLinkAnimation{
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 1;
+    }
+}
